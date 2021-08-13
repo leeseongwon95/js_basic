@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function 기계(구멍){
+            this.q = 구멍;
+            this.w = 'snowball';
+        }
+
+        // this 는 기계로부터 생성되는 object임 (멋진말로 instance)
+        // object에 추가하기 위함 
+
+        var nunu = new 기계("dal")
+        var garen = new 기계("nal")
+
+        class Hero {
+            constructor(구멍){
+                this.q = 구멍;
+                this.w = 'snowball'
+            }
+        }
+
+        // 상속 기능이라고 함 부모 자식관계 
+        // 부모 자식 관계 상속을 쓰는 이상한 문법 prototype
+
+        // prototype 
+        // 자바스크립트에만 있는 이상한 기능
+        // 유전자라고 생각하면 됨
+
+        기계.prototype.name = "kim"
+
+        // 부모가 가지고 있으면 쓸 수 있음
+        // 상속기능을 구현하는 두 번째 장치
+
+        var nunu = new 기계()
+
+        var 어레이 = [4,2,1]; // 인간의 방식
+        var 어레이 = new Array(4,2,1); // 컴퓨터의 방식
+
+        // array 자료에 .sort() 붙일 수 있는 이유가 뭐게요
+        // 기본 함수들이 부모 유전자에 기록이 되어 있어서 다 쓸 수 있는 것임 length
+        // Array라는 부모 유전자에 기록되어 있겠지 뭐
+
+
+        // 모든 array 자료에서 쓸 수 있는 함수 추가?
+
+        Array.prototype.함수 = function(){}
+        var 어레이 = [4,2,1];
+
+
+
+        // <object 에서 자료 뽑을 때 일어나는 일>
+        // 1. 직접 자료를 가지고 있으면 그거 출력
+        // 2. 없으면 부모 유전자까지 뒤짐
+        // 3. 없으면 부모의부모유전자까지
+
+
+
+
+
+        // var nunu = {
+        //     q : 'consume',
+        //     w : 'snowball'
+        // }
+
+        // var garen = {
+        //     q : 'strike',
+        //     w : 'courage'
+        // }
+
+        // class 를 만들면 object를 무한정으로 만들 수 있음 한줄컷
+
+        // class 는 object 뽑는 기계일 뿐
+
+
+        // 웹브라우저 동작원리란?
+
+        // Stack 이라는 공간이 있는데 한줄한줄 쌓아서 실행을 시켜줌
+        // Heap 이라는 공간에서 가져다 씀
+
+        // Stack 님들 코드 실행해주는 곳임 (특징 :하나임)
+        // 자바스크립트는 single threaded
+        
+        // setTimeout 코드 같은 것은 바로 실행 할 수 없는 거라 Stack 에서 치워 버림
+
+        // 잠깐 대기실로 재껴둠 그래서
+
+        // 대기실 보내는 코드들 (Ajax 요청 코드, 이벤트리스너, setTimeout 등)
+        // 대기실에서 다시 Stack 으로 보내기 위해 Queue 에 넣어놓음
+
+        // 대기 끝난 코드를 Queue 로 옮긴다는 뜻
+
+        // Stack 은 바쁜 곳임
+
+        // Stack 이 텅비었을때만 올릴 수 있음
+
+        // setTimeout 을 0초를 준다면? 그래도 대기실로 치워버림 0초걸려도
+
+        // 많은 미스터리가 해결 가능
+
+        // 예를 들어서 반복문을 쓸 때 매우 많이 돌리면 오래 걸림 10초 걸리는 연산을 자바스크립트로 쓰면 안됨
+
+        // 10초 걸리는 중간에 버튼클릭, ajax 요ㅕ청, setTimeout 타이머 안됨
+
+        // 버튼 누르면 모달창 ? 눌러도 안뜸 이벤트리스너 같은 코드들은 이벤트 거쳐서 큐에서 스택으로 올라가는데
+        // 스택이 비었을때만 올려보내기 때문에 10초동안 비어있지 않아서 안올라가는것임
+
+        // Stack 을 바쁘게 만들면 안됨 ㅈㄴ 느리기 때문
+
+        // Queue 바쁘게 해도 안됨 ㅈㄴ 느림 ㄷㄷ
+
+        // 자바스크립트는 동기적 vs 비동기적 ? 
+
+        // 자바스크립트는 원래 동기적으로 처리됨 한번에 한줄 순서대로 ㄱ ㄱ
+        // 가끔 비동기적인 처리도 가능 (setTimeout, 이벤트리스너, ajax 함수)
+
+
+
+    </script>
+</body>
+</html>
